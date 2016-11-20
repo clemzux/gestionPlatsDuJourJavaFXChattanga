@@ -27,7 +27,7 @@ public class CHomeGUI {
     private HBox topWindowHbox;
 
     private ImageView logoChattangaImageView;
-    private Button exitButton, dayDIshModificationButton, consultDayDishButton, sendImageToServerButton, consultReservationsButton;
+    private Button exitButton, createDayDishButton, consultDayDishButton, sendImageToServerButton, consultReservationsButton;
 
 
     //////// builder ////////
@@ -50,7 +50,6 @@ public class CHomeGUI {
 
     private void windowFinalization() {
 
-//        primaryStage = new Stage();
         primaryStage.setTitle(CAppConstants.APP_NAME + CAppConstants.APP_HOME_NAME);
         primaryStage.setResizable(false);
         primaryStage.setWidth(CAppConstants.HOME_WIDTH);
@@ -64,7 +63,7 @@ public class CHomeGUI {
 
         topWindowHbox.getChildren().addAll(logoChattangaImageView, exitButton);
 
-        fullWindowVbox.getChildren().addAll(topWindowHbox, consultReservationsButton, consultDayDishButton, dayDIshModificationButton,
+        fullWindowVbox.getChildren().addAll(topWindowHbox, consultReservationsButton, consultDayDishButton, createDayDishButton,
                 sendImageToServerButton);
 
         primaryStage.setScene(scene);
@@ -93,8 +92,8 @@ public class CHomeGUI {
         exitButton.setPrefSize(CAppConstants.QUIT_BUTTON_WIDTH, CAppConstants.QUIT_BUTTON_HEIGHT);
         consultDayDishButton = new Button(CAppConstants.CONSULT_DAYDISH_BUTTON);
         consultDayDishButton.setPrefSize(CAppConstants.BUTTON_WIDTH, CAppConstants.BUTTON_HEIGHT);
-        dayDIshModificationButton = new Button(CAppConstants.DAYDISH_MODIFICATION_BUTTON);
-        dayDIshModificationButton.setPrefSize(CAppConstants.BUTTON_WIDTH, CAppConstants.BUTTON_HEIGHT);
+        createDayDishButton = new Button(CAppConstants.CREATE_DAYDISH_BUTTON);
+        createDayDishButton.setPrefSize(CAppConstants.BUTTON_WIDTH, CAppConstants.BUTTON_HEIGHT);
         sendImageToServerButton = new Button(CAppConstants.SEND_IMAGE_TO_SERVER_BUTTON);
         sendImageToServerButton.setPrefSize(CAppConstants.BUTTON_WIDTH, CAppConstants.BUTTON_HEIGHT);
         consultReservationsButton = new Button(CAppConstants.CONSULT_RESERVATIONS_BUTTON);
@@ -107,7 +106,7 @@ public class CHomeGUI {
 
     public Button getExitButton() { return exitButton; }
 
-    public Button getDayDIshModificationButton() { return dayDIshModificationButton; }
+    public Button getDayDIshModificationButton() { return createDayDishButton; }
 
     public Button getConsultDayDishButton() { return consultDayDishButton; }
 
