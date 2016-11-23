@@ -75,8 +75,8 @@ public class CConsultDayDishGUI {
 
         primaryStage.setTitle(CAppConstants.APP_NAME + CAppConstants.APP_CONSULT_DAYDISH_NAME);
         primaryStage.setResizable(false);
-        primaryStage.setWidth(CAppConstants.CONSULT_RESERVATION_WIDTH);
-        primaryStage.setHeight(CAppConstants.CONSULT_RESERVATION_HEIGHT);
+        primaryStage.setWidth(CAppConstants.CONSULT_DAYDISH_WIDTH);
+        primaryStage.setHeight(CAppConstants.CONSULT_DAYDISH_HEIGHT);
 
         primaryStage.setScene(scene);
         primaryStage.show();

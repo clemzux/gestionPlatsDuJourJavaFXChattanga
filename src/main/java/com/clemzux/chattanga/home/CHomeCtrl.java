@@ -1,6 +1,7 @@
 package com.clemzux.chattanga.home;
 
 import com.clemzux.chattanga.consultdaydish.CConsultDayDishGUI;
+import com.clemzux.chattanga.consultreservation.CConsultReservationGUI;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -33,7 +34,7 @@ public class CHomeCtrl {
         homeGUI.getConsultReservationsButton().setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
 
-
+                CConsultReservationGUI consultReservationGUI = new CConsultReservationGUI(homeGUI.getPrimaryStage());
             }
         });
 

@@ -12,6 +12,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
+import java.awt.*;
+
 /**
  * Created by clemzux on 20/11/16.
  */
@@ -32,10 +34,16 @@ public class CAppConstants {
 
     // sizes
 
-    public static final int HOME_WIDTH = 450;
-    public static final int HOME_HEIGHT = 400;
-    public static final int CONSULT_RESERVATION_WIDTH = 700;
-    public static final int CONSULT_RESERVATION_HEIGHT = 700;
+    private static Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+    public static final int SCREEN_HEIGHT = (int)dimension.getHeight();
+    public static final int SCREEN_WIDTH  = (int)dimension.getWidth();
+
+    public static final int HOME_WIDTH = (int) (SCREEN_WIDTH * 0.3);
+    public static final int HOME_HEIGHT = (int) (SCREEN_HEIGHT * 0.5);
+    public static final int CONSULT_DAYDISH_WIDTH = (int) (SCREEN_WIDTH * 0.5);
+    public static final int CONSULT_DAYDISH_HEIGHT = (int) (SCREEN_HEIGHT * 0.8);
+    public static final int CONSULT_RESERVATION_WIDTH = (int) (SCREEN_WIDTH * 0.5);
+    public static final int CONSULT_RESERVATION_HEIGHT = (int) (SCREEN_HEIGHT * 0.7);
 
     public static final int BUTTON_WIDTH = 180;
     public static final int BUTTON_HEIGHT = 30;
@@ -58,8 +66,7 @@ public class CAppConstants {
     public static final String APP_NAME = "La Chattanga";
     public static final String APP_HOME_NAME = " - Accueil";
     public static final String APP_CONSULT_RESERVATION_NAME = " - Consulter réservations";
-    public static final String APP_DAYDISH_MODIFICATION_NAME = " - Modification plat du jour";
-    public static final String APP_CONSULT_DAYDISH_NAME = " - Consultation plats du jour";
+    public static final String APP_CONSULT_DAYDISH_NAME = " - Consultation/modification plats du jour";
 
     // buttons text
 
@@ -74,8 +81,18 @@ public class CAppConstants {
 
     // text text
 
+    // consulter plats du jour
     public static final String DAYDISH_DETAILS_TEXT = "Détails : ";
     public static final String DATE_TEXT = "Date (jj/mm/aaaa) : ";
     public static final String DAYDISH_TEXT = "Nom du plat : ";
     public static final String IMAGE_IDENTIFIER_TEXT = "Identifiant image : ";
+
+    // consulter reservations
+    public static final String CONSULT_RESERVATIONS_FORM_NAME = "Détails réservation :";
+    public static final String CONSULT_RESERVATIONS_NAME = "Nom : ";
+    public static final String CONSULT_RESERVATIONS_TEL = "Tel : ";
+    public static final String CONSULT_RESERVATIONS_NB_PEOPLE = "Nombre personnes : ";
+    public static final String CONSULT_RESERVATIONS_NB_DAYDISH = "Nombre plats du jour : ";
+    public static final String CONSULT_RESERVATIONS_HOUR_ARRIVE = "Heure d'arrivée : ";
+    public static final String CONSULT_RESERVATIONS_NOTE = "Remarque : ";
 }
