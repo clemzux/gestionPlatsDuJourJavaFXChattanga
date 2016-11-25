@@ -2,6 +2,7 @@ package com.clemzux.chattanga.home;
 
 import com.clemzux.chattanga.consultdaydish.CConsultDayDishGUI;
 import com.clemzux.chattanga.consultreservation.CConsultReservationGUI;
+import com.clemzux.chattanga.createdaydish.CCreateDayDishGUI;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -14,7 +15,7 @@ public class CHomeCtrl {
     private CHomeModel homeModel = CHomeModel.getInstance();
 
 
-    //////// bilder ////////
+    //////// builder ////////
 
 
     public CHomeCtrl(CHomeGUI pGui) {
@@ -30,6 +31,13 @@ public class CHomeCtrl {
 
 
     private void initializeListeners() {
+
+        homeGUI.getCreateDayDIshButton().setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+
+                CCreateDayDishGUI createDayDishGUI = new CCreateDayDishGUI(homeGUI.getPrimaryStage());
+            }
+        });
 
         homeGUI.getConsultReservationsButton().setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {

@@ -112,7 +112,9 @@ public class CConsultReservationGUI {
         logoImageView.setFitWidth(CAppConstants.SCREEN_WIDTH * 0.1);
         logoImageView.setFitHeight(CAppConstants.SCREEN_HEIGHT * 0.1);
         backButton = new Button(CAppConstants.BACK_BUTTON);
+        backButton.setPrefSize(CAppConstants.QUIT_BUTTON_WIDTH, CAppConstants.QUIT_BUTTON_HEIGHT);
         quitButton = new Button(CAppConstants.QUIT_BUTTON);
+        quitButton.setPrefSize(CAppConstants.QUIT_BUTTON_WIDTH, CAppConstants.QUIT_BUTTON_HEIGHT);
 
         formNameText = new Text(CAppConstants.CONSULT_RESERVATIONS_FORM_NAME);
         nameText = new Text(CAppConstants.CONSULT_RESERVATIONS_NAME);

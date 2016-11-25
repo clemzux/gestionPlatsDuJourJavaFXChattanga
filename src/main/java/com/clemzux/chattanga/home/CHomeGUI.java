@@ -101,7 +101,7 @@ public class CHomeGUI {
 
     public Button getExitButton() { return exitButton; }
 
-    public Button getDayDIshModificationButton() { return createDayDishButton; }
+    public Button getCreateDayDIshButton() { return createDayDishButton; }
 
     public Button getConsultDayDishButton() { return consultDayDishButton; }
 

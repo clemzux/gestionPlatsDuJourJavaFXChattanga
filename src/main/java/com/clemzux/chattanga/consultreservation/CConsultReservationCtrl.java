@@ -10,6 +10,7 @@ import javafx.event.EventHandler;
 public class CConsultReservationCtrl {
 
     private CConsultReservationGUI consultReservationGUI;
+    private CConsultReservationModel consultReservationModel = CConsultReservationModel.getInstance();
 
 
     //////// builder ////////
