@@ -1,12 +1,11 @@
 package com.clemzux.chattanga.createdaydish;
 
-import com.clemzux.chattanga.consultreservation.CConsultReservationCtrl;
 import com.clemzux.chattanga.utilitaries.CAppConstants;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,7 +31,7 @@ public class CCreateDayDishGUI {
 
     private Button backButton, quitButton, addDayDishButton;
 
-    private Spinner<String> daySpinner, monthSpinner, yearSpinner;
+    private ComboBox<Integer> dayComboBox, monthComboBox, yearComboBox;
     private Text formTitleText, dateText, dayDishText, imageIdentifierText;
     private TextField dayDishTextField, imageIdentifierTextField;
 
@@ -69,7 +68,7 @@ public class CCreateDayDishGUI {
     private void widgetsPlacement() {
 
         textVbox.getChildren().addAll(dateText, dayDishText, imageIdentifierText);
-        spinnerHbox.getChildren().addAll(daySpinner, monthSpinner, yearSpinner);
+        spinnerHbox.getChildren().addAll(dayComboBox, monthComboBox, yearComboBox);
         textFieldVbox.getChildren().addAll(spinnerHbox, dayDishTextField, imageIdentifierTextField);
 
         textTextFieldHbox.getChildren().addAll(textVbox, textFieldVbox);
@@ -126,9 +125,9 @@ public class CCreateDayDishGUI {
         dayDishText = new Text(CAppConstants.CREATE_DAYDISH_NAME);
         imageIdentifierText = new Text(CAppConstants.CREATE_DAYDISH_IMAGE_IDENTIFIER);
 
-        daySpinner = new Spinner<String>();
-        monthSpinner = new Spinner<String>();
-        yearSpinner = new Spinner<String>();
+        dayComboBox = new ComboBox<Integer>();
+        monthComboBox = new ComboBox<Integer>();
+        yearComboBox = new ComboBox<Integer>();
 
         dayDishTextField = new TextField();
         imageIdentifierTextField = new TextField();
@@ -148,11 +147,11 @@ public class CCreateDayDishGUI {
 
     public Button getAddDayDishButton() { return addDayDishButton; }
 
-    public Spinner<String> getDaySpinner() { return daySpinner; }
+    public ComboBox<Integer> getDayComboBox() { return dayComboBox; }
 
-    public Spinner<String> getMonthSpinner() { return monthSpinner; }
+    public ComboBox<Integer> getMonthComboBox() { return monthComboBox; }
 
-    public Spinner<String> getYearSpinner() { return yearSpinner; }
+    public ComboBox<Integer> getYearComboBox() { return yearComboBox; }
 
     public TextField getDayDishTextField() { return dayDishTextField; }
 

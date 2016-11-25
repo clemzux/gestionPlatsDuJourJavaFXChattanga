@@ -27,7 +27,7 @@ public class CAppConstants {
         cc.getClasses().add(JacksonJsonProvider.class);
         Client c = Client.create(cc);
 //        webResource = c.resource("http://176.157.85.69:9999");
-        webResource = c.resource("http://localhost:10000");
+        webResource = c.resource("http://localhost:9998");
     }
 
     public static final Background appBackGround = new Background(new BackgroundFill(Color.web("#D80000"), CornerRadii.EMPTY, Insets.EMPTY));
@@ -103,4 +103,23 @@ public class CAppConstants {
     public static final String CREATE_DAYDISH_DATE = "Date : ";
     public static final String CREATE_DAYDISH_NAME = "Nom du plat : ";
     public static final String CREATE_DAYDISH_IMAGE_IDENTIFIER = "Identifiant de l'image : ";
+
+    // alertes
+
+    public static final String WARNING_ALERT = "Attention";
+
+    // champ nom du plat du jour vide
+    public static final String WARNING_DAYDISH_TEXTFIELD_EMPTY_HEADER = "Champ \"Nom du plat\n vide !";
+    public static final String WARNING_DAYDISH_TEXTFIELD_EMPTY_TEXT = "Vous devez remplir le champ\n" +
+            "plat du jour pour pouvoir\n" +
+            "enregistrer le plat !";
+    // date non valide
+    public static final String WARNING_DATE_NOT_VALID_HEADER = "Date non valide !";
+    public static final String WARNING_DATE_NOT_VALID_TEXT = "La date que vous tentez de\n" +
+            "saisir n'existe pas dans le calendrier\n" +
+            "ou est inférieure a la date du jour !";
+    // plat du jour déja saisi a cette date
+    public static final String WARNING_DAYDISH_ALREADY_EXISTS_HEADER = "Date déja prise !";
+    public static final String WARNING_DAYDISH_ALREADY_EXISTS_TEXT = "La date choisie correspond\n" +
+            "à la date d'un autre plat déja saisi !";
 }
