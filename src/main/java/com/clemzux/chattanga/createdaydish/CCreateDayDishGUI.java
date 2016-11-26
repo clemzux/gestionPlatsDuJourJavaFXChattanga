@@ -19,8 +19,6 @@ import javafx.stage.Stage;
  */
 public class CCreateDayDishGUI {
 
-    private CCreateDayDishCtrl createDayDishCtrl;
-
     private Stage primaryStage;
     private Scene scene;
 
@@ -47,7 +45,7 @@ public class CCreateDayDishGUI {
         widgetsPlacement();
         windowFinalization();
 
-        createDayDishCtrl = new CCreateDayDishCtrl(this);
+        new CCreateDayDishCtrl(this);
     }
 
 

@@ -1,12 +1,12 @@
 package com.clemzux.chattanga.consultreservation;
 
-import chattanga.classes.CDate;
 import chattanga.classes.CReservation;
 import com.clemzux.chattanga.utilitaries.CAppConstants;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -25,11 +25,12 @@ public class CConsultReservationGUI {
     private Stage primaryStage;
     private Scene scene;
 
-    private VBox fullWindowVbox, quitBackVbox,formVbox, textVbox, textChangeVbox;
-    private HBox topWindowHbox, listFormHbox, textTextChangeHbox;
+    private VBox fullWindowVbox, quitBackVbox, comboBoxListVbox, formVbox, textVbox, textChangeVbox;
+    private HBox topWindowHbox, comboBoxHbox, listFormHbox, textTextChangeHbox;
 
     private ImageView logoImageView;
     private Button quitButton, backButton;
+    private ComboBox<Integer> daysComboBox, monthsComboBox, yearsComboBox;
     private ListView<CReservation> reservationListView;
     private Text formNameText, nameText, telText, numberPeopleText, numberDayDishText, hourArriveText, noteText;
     private Text nameChangeText, telChangeText, numberPeopleChangeText, numberDayDishChangeText, hourArriveChangeText, noteChangeText;
@@ -63,7 +64,11 @@ public class CConsultReservationGUI {
 
         formVbox.getChildren().addAll(formNameText, textTextChangeHbox);
 
-        listFormHbox.getChildren().addAll(reservationListView, formVbox);
+        comboBoxHbox.getChildren().addAll(daysComboBox, monthsComboBox, yearsComboBox);
+
+        comboBoxListVbox.getChildren().addAll(comboBoxHbox, reservationListView);
+
+        listFormHbox.getChildren().addAll(comboBoxListVbox, formVbox);
 
         quitBackVbox.getChildren().addAll(quitButton, backButton);
         topWindowHbox.getChildren().addAll(logoImageView, quitBackVbox);
@@ -89,6 +94,14 @@ public class CConsultReservationGUI {
         quitBackVbox = new VBox();
         quitBackVbox.setPadding(new Insets(20, 0, 0, 170));
         quitBackVbox.setSpacing(CAppConstants.GENERAL_SPACING);
+
+        comboBoxListVbox = new VBox();
+        comboBoxListVbox.setAlignment(Pos.CENTER);
+        comboBoxHbox = new HBox();
+        comboBoxHbox.setAlignment(Pos.CENTER);
+        daysComboBox = new ComboBox<Integer>();
+        monthsComboBox = new ComboBox<Integer>();
+        yearsComboBox = new ComboBox<Integer>();
 
         listFormHbox = new HBox();
         listFormHbox.setPadding(new Insets(0, 0, 0, 50));
@@ -166,4 +179,10 @@ public class CConsultReservationGUI {
     public Text getHourArriveChangeText() { return hourArriveChangeText; }
 
     public Text getNoteChangeText() { return noteChangeText; }
+
+    public ComboBox<Integer> getDaysComboBox() { return daysComboBox; }
+
+    public ComboBox<Integer> getMonthsComboBox() { return monthsComboBox; }
+
+    public ComboBox<Integer> getYearsComboBox() { return yearsComboBox; }
 }

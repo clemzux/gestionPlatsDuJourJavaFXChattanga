@@ -7,7 +7,6 @@ import com.clemzux.chattanga.utilitaries.CUtilitary;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
 
 import java.util.*;
 
@@ -30,7 +29,7 @@ public class CCreateDayDishCtrl {
         createDayDishGUI = pGui;
         createDayDishModel.setGui(pGui);
 
-        populateSpinners();
+        populateComboBox();
         initializeListeners();
     }
 
@@ -38,7 +37,7 @@ public class CCreateDayDishCtrl {
     //////// methods ////////
 
 
-    private void populateSpinners() {
+    private void populateComboBox() {
 
         List<Integer> daysList = new ArrayList<Integer>();
         List<Integer> monthList = new ArrayList<Integer>();
@@ -68,7 +67,15 @@ public class CCreateDayDishCtrl {
         createDayDishGUI.getAddDayDishButton().setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
 
-                if (isDateOk())
+                day = createDayDishGUI.getDayComboBox().getSelectionModel().getSelectedItem();
+                month = createDayDishGUI.getMonthComboBox().getSelectionModel().getSelectedItem();
+                month--;
+                year = createDayDishGUI.getYearComboBox().getSelectionModel().getSelectedItem();
+
+                if (CUtilitary.isDateOk(day, month, year)) {
+
+                    System.out.println(month);
+                    month++;
                     if (isDayDishTextFieldNotNull())
                         createDayDish();
                     else {
@@ -76,6 +83,7 @@ public class CCreateDayDishCtrl {
                         CUtilitary.makeAlert(CAppConstants.WARNING_ALERT, CAppConstants.WARNING_DAYDISH_TEXTFIELD_EMPTY_HEADER,
                                 CAppConstants.WARNING_DAYDISH_TEXTFIELD_EMPTY_TEXT);
                     }
+                }
                 else {
                     CUtilitary.makeAlert(CAppConstants.WARNING_ALERT, CAppConstants.WARNING_DATE_NOT_VALID_HEADER,
                             CAppConstants.WARNING_DATE_NOT_VALID_TEXT);
@@ -129,33 +137,5 @@ public class CCreateDayDishCtrl {
         return false;
     }
 
-    private Boolean isDateOk() {
 
-        day = createDayDishGUI.getDayComboBox().getSelectionModel().getSelectedItem();
-        month = createDayDishGUI.getMonthComboBox().getSelectionModel().getSelectedItem();
-        month--;
-        year = createDayDishGUI.getYearComboBox().getSelectionModel().getSelectedItem();
-
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.set(year, month, day);
-        int goodYear = calendar.get(Calendar.YEAR);
-        int goodMonth = calendar.get(Calendar.MONTH);
-        int goodDay = calendar.get(Calendar.DAY_OF_MONTH);
-
-        if(goodYear==year & goodMonth==month & goodDay==day){
-
-            Calendar c = Calendar.getInstance();
-
-            System.out.println(c.get(Calendar.MONTH) + "   " + month);
-
-            if(c.get(Calendar.MONTH) < month)
-                if (c.get(Calendar.DAY_OF_MONTH) < day) {
-
-                    month++;
-                    return true;
-                }
-        }
-
-        return false;
-    }
 }

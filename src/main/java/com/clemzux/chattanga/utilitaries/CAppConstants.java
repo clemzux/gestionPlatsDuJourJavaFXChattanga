@@ -40,10 +40,10 @@ public class CAppConstants {
 
     public static final int HOME_WIDTH = (int) (SCREEN_WIDTH * 0.3);
     public static final int HOME_HEIGHT = (int) (SCREEN_HEIGHT * 0.5);
-    public static final int CONSULT_DAYDISH_WIDTH = (int) (SCREEN_WIDTH * 0.5);
+    public static final int CONSULT_DAYDISH_WIDTH = (int) (SCREEN_WIDTH * 0.7);
     public static final int CONSULT_DAYDISH_HEIGHT = (int) (SCREEN_HEIGHT * 0.8);
-    public static final int CREATE_DAYDISH_WIDTH = (int) (SCREEN_WIDTH * 0.5);
-    public static final int CREATE_DAYDISH_HEIGHT = (int) (SCREEN_HEIGHT * 0.5);
+    public static final int CREATE_DAYDISH_WIDTH = (int) (SCREEN_WIDTH * 0.4);
+    public static final int CREATE_DAYDISH_HEIGHT = (int) (SCREEN_HEIGHT * 0.4);
     public static final int CONSULT_RESERVATION_WIDTH = (int) (SCREEN_WIDTH * 0.5);
     public static final int CONSULT_RESERVATION_HEIGHT = (int) (SCREEN_HEIGHT * 0.7);
 

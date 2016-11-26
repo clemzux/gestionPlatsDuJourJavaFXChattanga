@@ -118,6 +118,7 @@ public class CConsultDayDishGUI {
         logoChattangaImageView.setFitHeight(CAppConstants.HOME_WIDTH * 0.3);
 
         dayDishsListView = new ListView<CDate>();
+        dayDishsListView.setPrefSize(CAppConstants.CONSULT_DAYDISH_WIDTH * 0.6, CAppConstants.CONSULT_DAYDISH_HEIGHT * 0.6);
 
         detailsText = new Text(CAppConstants.DAYDISH_DETAILS_TEXT);
 
