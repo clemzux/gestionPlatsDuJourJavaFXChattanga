@@ -40,7 +40,9 @@ public class CConsultDayDishModel {
 
     public void actualizeForm(CDate pDate) {
 
+        consultReservationsGUI.getDateTextField().setDisable(false);
         consultReservationsGUI.getDateTextField().setText(pDate.getDate());
+        consultReservationsGUI.getDateTextField().setDisable(true);
         consultReservationsGUI.getDayDishTextField().setText(pDate.getDayDish());
         consultReservationsGUI.getImageIdentifierTextField().setText(pDate.getImageIdentifier());
     }

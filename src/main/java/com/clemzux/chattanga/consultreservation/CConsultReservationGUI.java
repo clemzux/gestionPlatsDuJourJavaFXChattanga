@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,7 +30,7 @@ public class CConsultReservationGUI {
     private HBox topWindowHbox, comboBoxHbox, listFormHbox, textTextChangeHbox;
 
     private ImageView logoImageView;
-    private Button quitButton, backButton;
+    private Button quitButton, backButton, actualizeButton;
     private ComboBox<Integer> daysComboBox, monthsComboBox, yearsComboBox;
     private ListView<CReservation> reservationListView;
     private Text formNameText, nameText, telText, numberPeopleText, numberDayDishText, hourArriveText, noteText;
@@ -64,7 +65,7 @@ public class CConsultReservationGUI {
 
         formVbox.getChildren().addAll(formNameText, textTextChangeHbox);
 
-        comboBoxHbox.getChildren().addAll(daysComboBox, monthsComboBox, yearsComboBox);
+        comboBoxHbox.getChildren().addAll(daysComboBox, monthsComboBox, yearsComboBox, actualizeButton);
 
         comboBoxListVbox.getChildren().addAll(comboBoxHbox, reservationListView);
 
@@ -97,11 +98,6 @@ public class CConsultReservationGUI {
 
         comboBoxListVbox = new VBox();
         comboBoxListVbox.setAlignment(Pos.CENTER);
-        comboBoxHbox = new HBox();
-        comboBoxHbox.setAlignment(Pos.CENTER);
-        daysComboBox = new ComboBox<Integer>();
-        monthsComboBox = new ComboBox<Integer>();
-        yearsComboBox = new ComboBox<Integer>();
 
         listFormHbox = new HBox();
         listFormHbox.setPadding(new Insets(0, 0, 0, 50));
@@ -119,6 +115,7 @@ public class CConsultReservationGUI {
 
         reservationListView = new ListView<CReservation>();
         reservationListView.setPrefSize(CAppConstants.CONSULT_RESERVATION_WIDTH * 0.5, CAppConstants.CONSULT_RESERVATION_HEIGHT * 0.7);
+        reservationListView.setMinSize(CAppConstants.CONSULT_RESERVATION_WIDTH * 0.5, CAppConstants.CONSULT_RESERVATION_HEIGHT * 0.7);
 
         Image logo = new Image(CAppConstants.APP_LOGO);
         logoImageView = new ImageView(logo);
@@ -128,6 +125,13 @@ public class CConsultReservationGUI {
         backButton.setPrefSize(CAppConstants.QUIT_BUTTON_WIDTH, CAppConstants.QUIT_BUTTON_HEIGHT);
         quitButton = new Button(CAppConstants.QUIT_BUTTON);
         quitButton.setPrefSize(CAppConstants.QUIT_BUTTON_WIDTH, CAppConstants.QUIT_BUTTON_HEIGHT);
+
+        comboBoxHbox = new HBox();
+        comboBoxHbox.setAlignment(Pos.CENTER);
+        daysComboBox = new ComboBox<Integer>();
+        monthsComboBox = new ComboBox<Integer>();
+        yearsComboBox = new ComboBox<Integer>();
+        actualizeButton = new Button(CAppConstants.ACTUALIZE_BUTTON);
 
         formNameText = new Text(CAppConstants.CONSULT_RESERVATIONS_FORM_NAME);
         nameText = new Text(CAppConstants.CONSULT_RESERVATIONS_NAME);
@@ -166,6 +170,8 @@ public class CConsultReservationGUI {
 
     public Button getBackButton() { return backButton; }
 
+    public Button getActualizeButton() { return actualizeButton; }
+
     public ListView<CReservation> getReservationListView() { return reservationListView; }
 
     public Text getNameChangeText() { return nameChangeText; }
@@ -185,4 +191,6 @@ public class CConsultReservationGUI {
     public ComboBox<Integer> getMonthsComboBox() { return monthsComboBox; }
 
     public ComboBox<Integer> getYearsComboBox() { return yearsComboBox; }
+
+    public VBox getTextChangeVbox() { return textChangeVbox; }
 }

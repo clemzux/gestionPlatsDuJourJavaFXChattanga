@@ -80,12 +80,13 @@ public class CAppConstants {
     public static final String CONSULT_RESERVATIONS_BUTTON = "Consulter réservations";
     public static final String SEND_IMAGE_TO_SERVER_BUTTON = "Enregistrer une image";
     public static final String MODIFICATION_BUTTON = "Modifier";
+    public static final String ACTUALIZE_BUTTON = "Actualiser";
 
     // text
 
     // consulter plats du jour
     public static final String DAYDISH_DETAILS_TEXT = "Détails : ";
-    public static final String DATE_TEXT = "Date (jj/mm/aaaa) : ";
+    public static final String DATE_TEXT = "Date (jj-mm-aaaa) : ";
     public static final String DAYDISH_TEXT = "Nom du plat : ";
     public static final String IMAGE_IDENTIFIER_TEXT = "Identifiant image : ";
 
